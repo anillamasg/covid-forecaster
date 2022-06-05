@@ -78,7 +78,13 @@
               aria-expanded="false"
               style="border-color: black"
             >
-              Australian Capital Territory
+              <div class="d-flex">
+                <div id="locationMetricValue">Australian Capital Territory</div>
+                &nbsp;
+                <div>
+                  <i class="icofont-caret-down"></i>
+                </div>
+              </div>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a href="#" onclick="changeLocationMetric('Australia')"
@@ -124,7 +130,7 @@
           <div class="col-lg-12 col-md-12 col-xl-12">
             <div class="mb-2">
               <h2>Total Confirmed Cases</h2>
-              <div class="w-25 divider mt-1 mb-3"></div>
+              <div class="w-100 divider mt-1 mb-3"></div>
               <div class="w-100">
                 <div class="w-100">
                   <iframe
@@ -142,7 +148,7 @@
           <div class="col-lg-12 col-md-12 col-xl-12">
             <div class="mb-2">
               <h2>Recovered Cases</h2>
-              <div class="w-25 divider mt-1 mb-3"></div>
+              <div class="w-100 divider mt-1 mb-3"></div>
               <div class="w-100">
                 <div class="w-100">
                   <iframe
@@ -160,7 +166,7 @@
           <div class="col-lg-12 col-md-12 col-xl-12">
             <div class="mb-2">
               <h2>Death Cases</h2>
-              <div class="w-25 divider mt-1 mb-3"></div>
+              <div class="w-100 divider mt-1 mb-3"></div>
               <div class="w-100">
                 <div class="w-100">
                   <iframe
@@ -204,7 +210,7 @@
           <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="widget widget-contact mb-5 mb-lg-0">
               <h4 class="text-capitalize mb-3">Get in Touch</h4>
-              <div class="divider mb-4"></div>
+              <div class="w-50 divider mb-4"></div>
 
               <div class="footer-contact-block mb-4">
                 <h4 class="mt-2">
@@ -259,9 +265,9 @@
       metricMap.set("Victoria", "VIC");
 
       function changeLocationMetric(metric) {
-        let locationMetricValue = $("#locationMetricBtn").text();
+        let locationMetricValue = $("#locationMetricValue").text();
         if (!(metric === locationMetricValue)) {
-          $("#locationMetricBtn").text(metric);
+          $("#locationMetricValue").text(metric);
 
           $("#confirmedCasesGraph").attr(
             "src",
